@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nebula - Main Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffe088",
+                      "inverse-primary": "#5e5b7c",
+                      "inverse-on-surface": "#2b3137",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "surface-dim": "#0e141a",
+                      "secondary-fixed": "#e9ddff",
+                      "primary": "#c7c2e8",
+                      "on-background": "#dde3eb",
+                      "on-secondary-fixed-variant": "#522aa7",
+                      "on-primary": "#302d4b",
+                      "on-tertiary-container": "#977900",
+                      "on-surface-variant": "#c9c5ce",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "error": "#ffb4ab",
+                      "surface": "#0e141a",
+                      "secondary-container": "#552daa",
+                      "error-container": "#93000a",
+                      "tertiary-container": "#160f00",
+                      "surface-container-high": "#242b31",
+                      "secondary": "#d0bcff",
+                      "on-surface": "#dde3eb",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "surface-container-lowest": "#080f14",
+                      "surface-container": "#1a2026",
+                      "outline-variant": "#47464d",
+                      "surface-container-low": "#161c22",
+                      "primary-fixed": "#e4dfff",
+                      "inverse-surface": "#dde3eb",
+                      "on-secondary-container": "#c3abff",
+                      "surface-bright": "#333a40",
+                      "on-tertiary": "#3c2f00",
+                      "primary-fixed-dim": "#c7c2e8",
+                      "on-error": "#690005",
+                      "outline": "#928f98",
+                      "tertiary": "#e9c349",
+                      "surface-container-highest": "#2f353c",
+                      "background": "#0e141a",
+                      "surface-variant": "#2f353c",
+                      "on-secondary": "#3b0191",
+                      "primary-container": "#0f0c29",
+                      "on-primary-container": "#7c789b",
+                      "surface-tint": "#c7c2e8",
+                      "on-primary-fixed": "#1b1835",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed": "#23005c",
+                      "on-primary-fixed-variant": "#464363"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "48px",
+                      "container-margin": "24px",
+                      "unit": "8px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "DM Sans"
+                      ],
+                      "label-md": [
+                              "DM Sans"
+                      ],
+                      "display-lg": [
+                              "DM Sans"
+                      ],
+                      "label-sm": [
+                              "DM Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "DM Sans"
+                      ],
+                      "headline-lg": [
+                              "DM Sans"
+                      ],
+                      "headline-md": [
+                              "DM Sans"
+                      ],
+                      "body-lg": [
+                              "DM Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            background-image: radial-gradient(circle at 50% 0%, theme('colors.primary-container') 0%, transparent 70%);
+            background-attachment: fixed;
+        }
+        .glass-panel {
+            background: rgba(47, 53, 60, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen relative pb-24 md:pb-0 pt-16 md:pt-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-surface/60 dark:bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-sm flex justify-between items-center px-container-margin h-16 z-50">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-white/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a young person with serene expression. The lighting is soft and ethereal, fitting a premium, modern mystical aesthetic with deep indigo and soft gold tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv4vVNnua2WwzqXc-_GyXZtkkW7dfFrEhnnMA-E_79247kMBZUkU87nG7l5WmnYU0Mo3rNYGa_VPVDyfdnC44l66lSOT8AfMM4jrK3od_jguMw6qMBMlpmwV2sc5DVi35BgpNFnUtg6SdUygAOC49z8oS6iYpyzH8ei8QB4TGPHXdsrCwZXl4jFhlDeMIpMTADiaAiMKBRnENiIHxeTHBs1ZqywwgAUv15P3ntrdzx3tjmpsICQPJ0Ys7b7NJdtcxPY6n4W9_WlfM"/>
+</div>
+<div class="flex items-center gap-2 glass-panel px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-tertiary-fixed text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-sm text-label-sm text-on-surface">Leo</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">expand_more</span>
+</div>
+</div>
+<h1 class="font-display-lg text-headline-md tracking-widest text-tertiary-fixed dark:text-tertiary">NEBULA</h1>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">notifications</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-container-margin max-w-7xl mx-auto space-y-section-gap pt-8">
+<!-- Greeting Section -->
+<section class="space-y-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                Radiate today, <br/><span class="text-tertiary-fixed">Leo.</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                The sun highlights your expressive sector, urging you to showcase your natural creativity.
+            </p>
+</section>
+<!-- Daily Horoscope Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Main Horoscope Card -->
+<div class="glass-panel rounded-xl p-6 md:col-span-2 relative overflow-hidden group">
+<div class="absolute -right-12 -bottom-12 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed">wb_sunny</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Daily Insight</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Oct 24</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 relative z-10">
+                    Your charisma is particularly potent today. A surprising interaction could lead to a valuable creative collaboration. Trust your instincts when navigating social dynamics, but be mindful not to let pride overshadow genuine connection.
+                </p>
+<button class="font-label-md text-label-md text-primary flex items-center gap-1 hover:text-primary-fixed transition-colors">
+                    Read Full Forecast <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Mini Vitals -->
+<div class="grid grid-cols-2 md:grid-cols-1 gap-gutter">
+<div class="glass-panel rounded-xl p-4 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-secondary mb-2">favorite</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Mood</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold mt-1">Passionate</span>
+</div>
+<div class="glass-panel rounded-xl p-4 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2">palette</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Color</span>
+<div class="w-6 h-6 rounded-full bg-[#FFB4AB] mt-2 shadow-[0_0_10px_rgba(255,180,171,0.5)]"></div>
+</div>
+</div>
+</section>
+<!-- Time Horizons (Horizontal Scroll) -->
+<section class="space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Horizons</h3>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-container-margin px-container-margin md:mx-0 md:px-0">
+<div class="glass-panel rounded-xl p-5 min-w-[280px] flex-shrink-0 border-l-2 border-l-secondary">
+<div class="flex justify-between items-center mb-3">
+<span class="font-label-md text-label-md text-secondary">This Week</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">calendar_view_week</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                        Focus shifts towards organizing your domestic sphere. Unexpected news mid-week brings clarity.
+                    </p>
+</div>
+<div class="glass-panel rounded-xl p-5 min-w-[280px] flex-shrink-0 border-l-2 border-l-tertiary-fixed">
+<div class="flex justify-between items-center mb-3">
+<span class="font-label-md text-label-md text-tertiary-fixed">This Month</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">calendar_month</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                        A major professional milestone is within reach. Maintain discipline through the upcoming retrograde.
+                    </p>
+</div>
+<div class="glass-panel rounded-xl p-5 min-w-[280px] flex-shrink-0 border-l-2 border-l-primary">
+<div class="flex justify-between items-center mb-3">
+<span class="font-label-md text-label-md text-primary">Year Ahead</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">public</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                        Jupiter's transit promises expansion in learning and travel. Prepare for significant personal growth.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Planetary Positions -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-on-surface">Current Alignments</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tap for details</span>
+</div>
+<div class="glass-panel rounded-xl p-6">
+<div class="space-y-6">
+<!-- Aspect Item -->
+<div class="flex items-center justify-between group cursor-pointer hover:bg-surface-variant/30 p-2 -mx-2 rounded-lg transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center border border-tertiary-fixed/30">
+<span class="material-symbols-outlined text-tertiary-fixed">wb_sunny</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Sun in Scorpio</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Intensity &amp; Transformation</p>
+</div>
+</div>
+<div class="px-3 py-1 bg-surface-container rounded-full text-primary font-label-sm text-label-sm">
+                            Trine Mars
+                        </div>
+</div>
+<!-- Aspect Item -->
+<div class="flex items-center justify-between group cursor-pointer hover:bg-surface-variant/30 p-2 -mx-2 rounded-lg transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center border border-secondary/30">
+<span class="material-symbols-outlined text-secondary">nightlight</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Moon in Taurus</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Stability &amp; Comfort</p>
+</div>
+</div>
+<div class="px-3 py-1 bg-surface-container rounded-full text-error font-label-sm text-label-sm">
+                            Square Pluto
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container/40 dark:bg-surface-container/40 backdrop-blur-lg border-t border-white/5 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-tertiary-fixed dark:text-tertiary-fixed-dim bg-secondary-container/30 rounded-full px-4 py-1 active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1">auto_graph</span>
+<span class="font-label-sm text-label-sm">Charts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1">favorite</span>
+<span class="font-label-sm text-label-sm">Compatibility</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1">auto_fix_high</span>
+<span class="font-label-sm text-label-sm">Chat</span>
+</a>
+</nav>
+</body></html>

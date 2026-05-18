@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Astrologer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffe088",
+                        "inverse-primary": "#5e5b7c",
+                        "inverse-on-surface": "#2b3137",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "surface-dim": "#0e141a",
+                        "secondary-fixed": "#e9ddff",
+                        "primary": "#c7c2e8",
+                        "on-background": "#dde3eb",
+                        "on-secondary-fixed-variant": "#522aa7",
+                        "on-primary": "#302d4b",
+                        "on-tertiary-container": "#977900",
+                        "on-surface-variant": "#c9c5ce",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "error": "#ffb4ab",
+                        "surface": "#0e141a",
+                        "secondary-container": "#552daa",
+                        "error-container": "#93000a",
+                        "tertiary-container": "#160f00",
+                        "surface-container-high": "#242b31",
+                        "secondary": "#d0bcff",
+                        "on-surface": "#dde3eb",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "surface-container-lowest": "#080f14",
+                        "surface-container": "#1a2026",
+                        "outline-variant": "#47464d",
+                        "surface-container-low": "#161c22",
+                        "primary-fixed": "#e4dfff",
+                        "inverse-surface": "#dde3eb",
+                        "on-secondary-container": "#c3abff",
+                        "surface-bright": "#333a40",
+                        "on-tertiary": "#3c2f00",
+                        "primary-fixed-dim": "#c7c2e8",
+                        "on-error": "#690005",
+                        "outline": "#928f98",
+                        "tertiary": "#e9c349",
+                        "surface-container-highest": "#2f353c",
+                        "background": "#0e141a",
+                        "surface-variant": "#2f353c",
+                        "on-secondary": "#3b0191",
+                        "primary-container": "#0f0c29",
+                        "on-primary-container": "#7c789b",
+                        "surface-tint": "#c7c2e8",
+                        "on-primary-fixed": "#1b1835",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#23005c",
+                        "on-primary-fixed-variant": "#464363"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "48px",
+                        "container-margin": "24px",
+                        "unit": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "display-lg": ["DM Sans"],
+                        "label-sm": ["DM Sans"],
+                        "headline-lg-mobile": ["DM Sans"],
+                        "headline-lg": ["DM Sans"],
+                        "headline-md": ["DM Sans"],
+                        "body-lg": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(14, 20, 26, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .chat-bubble-ai {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(85, 45, 170, 0.2);
+            border: 1px solid rgba(255, 224, 136, 0.3); /* Gold/tertiary subtle border */
+            box-shadow: 0 4px 20px rgba(85, 45, 170, 0.15); /* Soft amethyst glow */
+        }
+        .chat-bubble-user {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nebula-bg {
+            background-image: radial-gradient(circle at 20% 30%, rgba(85, 45, 170, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 70%, rgba(15, 12, 41, 0.2) 0%, transparent 50%);
+            background-color: #0e141a; /* deep midnight canvas */
+        }
+        .input-glow:focus-within {
+            box-shadow: 0 0 15px rgba(255, 224, 136, 0.2); /* Astral Gold outer glow */
+            border-color: #ffe088;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col nebula-bg relative overflow-x-hidden selection:bg-secondary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="bg-surface/60 dark:bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-sm fixed top-0 w-full flex justify-between items-center px-container-margin h-16 z-50">
+<div class="flex items-center gap-4 hover:opacity-80 transition-opacity cursor-pointer">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-white/10">
+<img alt="user profile portrait" class="w-full h-full object-cover" data-alt="A close-up portrait of a serene individual, softly lit against a dark, mystical background hinting at cosmic themes. The lighting is sophisticated, evoking a premium, ethereal aesthetic with deep shadows and soft highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtaHgpphU9WDy2OD7aM8xxrjVnn5j-U6LVfS-qwTxLZ5MRpYTfCbdcbuCFLsEbYaykn5qh4tPptmTLleXSfT12NlLrp8GnLh5mttS8GUoILZUIo-T84d3Z0XcTZFtV0GfhuCq6uqCDyj-QrvlNbZ0qp6xMLiNaLt-WQmqrviyabDgMMAWOHmIArPdMPKIVgN2IlRm4Hf85clDGTWOAcEwjAeJVHJ3IWZcrz0pBZHCXZudfxzt3d6kX5fILkK5n9taDc31w6tRJXfs"/>
+</div>
+</div>
+<div class="font-display-lg text-headline-md tracking-widest text-tertiary-fixed dark:text-tertiary font-bold">NEBULA</div>
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-1 mt-16 mb-24 md:mb-0 px-container-margin py-8 md:py-12 max-w-4xl mx-auto w-full flex flex-col gap-6 relative">
+<!-- Welcome Message / AI Intro -->
+<div class="flex flex-col items-center justify-center text-center space-y-4 mb-section-gap">
+<div class="w-24 h-24 rounded-full overflow-hidden border-2 border-tertiary-fixed shadow-[0_0_30px_rgba(85,45,170,0.4)] mb-2 relative">
+<img alt="AI Astrologer Avatar" class="w-full h-full object-cover" data-alt="An ethereal, glowing celestial sphere acting as an avatar for an AI Astrologer. It is composed of swirling deep indigo, amethyst, and astral gold energy strands. The background is a stark midnight blue, creating a high-end, mystical, and sophisticated focal point without new-age cliches." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCozikeBTZNMRS1gbMyBle31jfwM9Bsn12fv2EBSe7Zg1D_FtBvl_XLN8gt2qM0yo_rhubboE9secGo9mnzOswVLn6Fp4Tfi-LW2pOIH6HXbgclgvdL3ITClpi7nl9LQ_uG_MEYSZP4ZnIUE_sszeVsZ9FMWFEjMpkFFUFh6R4vVNSzFXnBB7Icp3zV_aBRMYZD3gYZQVLK20_Rzs-CPK3MI8qQvdf6TyHCUj4XNaCQeLv92btDKJzl2O1MewiVuc5CdIUke9i3dNs"/>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-on-surface">The Cosmos Awaits</h1>
+<p class="font-body-md text-on-surface-variant max-w-md">I am your celestial guide. Ask me about your transits, natal chart, or seek guidance from the stars.</p>
+</div>
+<!-- Chat History -->
+<div class="flex flex-col gap-6 mb-8 flex-1">
+<!-- AI Message -->
+<div class="flex items-start gap-4 max-w-[85%] self-start">
+<div class="w-8 h-8 rounded-full bg-surface-container flex-shrink-0 flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">auto_awesome</span>
+</div>
+<div class="chat-bubble-ai rounded-2xl rounded-tl-sm p-4 text-on-surface">
+<p class="font-body-md">Greetings. The moon is currently in waxing crescent in Gemini, sparking curiosity and quick exchanges. How may I illuminate your path today?</p>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-end gap-4 max-w-[85%] self-end">
+<div class="chat-bubble-user rounded-2xl rounded-tr-sm p-4 text-on-surface">
+<p class="font-body-md">What does my love life look like this week?</p>
+</div>
+</div>
+<!-- AI Message -->
+<div class="flex items-start gap-4 max-w-[85%] self-start">
+<div class="w-8 h-8 rounded-full bg-surface-container flex-shrink-0 flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">auto_awesome</span>
+</div>
+<div class="chat-bubble-ai rounded-2xl rounded-tl-sm p-4 text-on-surface space-y-3">
+<p class="font-body-md">With Venus transiting your 7th house of partnerships, forming a harmonious trine with Jupiter, this is a highly auspicious week for connection.</p>
+<div class="flex gap-2 mt-2">
+<span class="bg-surface-container-high border border-white/10 px-3 py-1 rounded-full font-label-sm text-secondary-fixed">Venus Trine Jupiter</span>
+<span class="bg-surface-container-high border border-white/10 px-3 py-1 rounded-full font-label-sm text-secondary-fixed">7th House Focus</span>
+</div>
+<p class="font-body-md text-on-surface-variant/80 text-sm mt-2">Expect open communication and perhaps a fortunate encounter. Remain receptive.</p>
+</div>
+</div>
+</div>
+<!-- Suggested Prompts (Bento-style layout for web, scrollable for mobile) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<button class="glass-panel text-left p-4 rounded-xl hover:border-tertiary-fixed/50 hover:shadow-[0_0_15px_rgba(85,45,170,0.2)] transition-all group duration-300 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:text-tertiary-fixed transition-colors">history</span>
+<div>
+<span class="block font-label-md text-on-surface">Explain my Saturn Return</span>
+<span class="block font-body-md text-sm text-on-surface-variant mt-1 line-clamp-1">Understand the major life shifts occurring.</span>
+</div>
+</button>
+<button class="glass-panel text-left p-4 rounded-xl hover:border-tertiary-fixed/50 hover:shadow-[0_0_15px_rgba(85,45,170,0.2)] transition-all group duration-300 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:text-tertiary-fixed transition-colors">work</span>
+<div>
+<span class="block font-label-md text-on-surface">Career prospects this month</span>
+<span class="block font-body-md text-sm text-on-surface-variant mt-1 line-clamp-1">Analyzing your 10th house transits.</span>
+</div>
+</button>
+</div>
+</main>
+<!-- Input Area -->
+<div class="fixed bottom-[72px] md:bottom-0 left-0 w-full p-4 md:p-6 bg-gradient-to-t from-background via-background to-transparent z-40 pointer-events-none">
+<div class="max-w-4xl mx-auto relative pointer-events-auto">
+<div class="relative glass-panel rounded-full input-glow border border-white/10 transition-all duration-300 bg-surface-container-low/80">
+<input class="w-full bg-transparent border-none text-on-surface font-body-md px-6 py-4 rounded-full focus:ring-0 placeholder:text-on-surface-variant/50" placeholder="Ask the stars..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-r from-secondary-container to-[#3b0191] border border-tertiary-fixed/30 flex items-center justify-center text-white hover:opacity-90 transition-opacity active:scale-95 shadow-[0_0_10px_rgba(85,45,170,0.4)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container/40 dark:bg-surface-container/40 backdrop-blur-lg fixed bottom-0 w-full rounded-t-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] z-50 flex justify-around items-center px-4 pb-4 pt-2">
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 duration-300">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 duration-300">
+<span class="material-symbols-outlined mb-1">auto_graph</span>
+<span class="font-label-sm text-label-sm">Charts</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 duration-300">
+<span class="material-symbols-outlined mb-1">favorite</span>
+<span class="font-label-sm text-label-sm">Compatibility</span>
+</button>
+<button class="flex flex-col items-center justify-center text-tertiary-fixed dark:text-tertiary-fixed-dim bg-secondary-container/30 rounded-full px-4 py-1 active:scale-90 duration-300">
+<span class="material-symbols-outlined mb-1">auto_fix_high</span>
+<span class="font-label-sm text-label-sm">Chat</span>
+</button>
+</nav>
+</body></html>

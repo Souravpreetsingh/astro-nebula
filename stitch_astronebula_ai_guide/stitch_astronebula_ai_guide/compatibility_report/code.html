@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nebula - Compatibility Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffe088",
+                      "inverse-primary": "#5e5b7c",
+                      "inverse-on-surface": "#2b3137",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "surface-dim": "#0e141a",
+                      "secondary-fixed": "#e9ddff",
+                      "primary": "#c7c2e8",
+                      "on-background": "#dde3eb",
+                      "on-secondary-fixed-variant": "#522aa7",
+                      "on-primary": "#302d4b",
+                      "on-tertiary-container": "#977900",
+                      "on-surface-variant": "#c9c5ce",
+                      "on-tertiary-fixed": "#241a00",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "error": "#ffb4ab",
+                      "surface": "#0e141a",
+                      "secondary-container": "#552daa",
+                      "error-container": "#93000a",
+                      "tertiary-container": "#160f00",
+                      "surface-container-high": "#242b31",
+                      "secondary": "#d0bcff",
+                      "on-surface": "#dde3eb",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "surface-container-lowest": "#080f14",
+                      "surface-container": "#1a2026",
+                      "outline-variant": "#47464d",
+                      "surface-container-low": "#161c22",
+                      "primary-fixed": "#e4dfff",
+                      "inverse-surface": "#dde3eb",
+                      "on-secondary-container": "#c3abff",
+                      "surface-bright": "#333a40",
+                      "on-tertiary": "#3c2f00",
+                      "primary-fixed-dim": "#c7c2e8",
+                      "on-error": "#690005",
+                      "outline": "#928f98",
+                      "tertiary": "#e9c349",
+                      "surface-container-highest": "#2f353c",
+                      "background": "#0e141a",
+                      "surface-variant": "#2f353c",
+                      "on-secondary": "#3b0191",
+                      "primary-container": "#0f0c29",
+                      "on-primary-container": "#7c789b",
+                      "surface-tint": "#c7c2e8",
+                      "on-primary-fixed": "#1b1835",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary-fixed": "#23005c",
+                      "on-primary-fixed-variant": "#464363"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "48px",
+                      "container-margin": "24px",
+                      "unit": "8px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "body-md": ["DM Sans"],
+                      "label-md": ["DM Sans"],
+                      "display-lg": ["DM Sans"],
+                      "label-sm": ["DM Sans"],
+                      "headline-lg-mobile": ["DM Sans"],
+                      "headline-lg": ["DM Sans"],
+                      "headline-md": ["DM Sans"],
+                      "body-lg": ["DM Sans"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .cosmic-bg {
+            background-image: radial-gradient(circle at 50% 0%, rgba(85, 45, 170, 0.15) 0%, transparent 60%),
+                              radial-gradient(circle at 80% 80%, rgba(255, 224, 136, 0.05) 0%, transparent 40%);
+        }
+        .glow-ring {
+            box-shadow: 0 0 30px rgba(208, 188, 255, 0.2), inset 0 0 20px rgba(85, 45, 170, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen cosmic-bg pb-24 md:pb-0 pt-16">
+<!-- TopAppBar -->
+<header class="bg-surface/60 dark:bg-surface/60 backdrop-blur-xl fixed top-0 w-full border-b border-white/10 shadow-sm flex justify-between items-center px-container-margin h-16 z-50">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200 text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="arrow_back" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline/30">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A small, circular portrait of a young woman with a calm expression, softly lit with cool, mystical tones fitting a premium astrology app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_aWBTayX68N4O_7_LQUdn44eaNTbbbK06x2y93WqEfcnuncpU_TIYKwM_lg_t_OFhqksN0R02gE0OJ-NOHQNjzOAYcpceJ1sjG-NIWexOKAfGcWxXbEzjgBpV0W879d8pX366SvhT2gMtDSTI6GcjNopulqYPraO6g539C4KvQEPcxFBDoiA1AwJ3KJfvn4KwP45ApT1M74eKkhLDxkzjnRCsGqgAAHF-G7S4VlTfzH5DZsUzX6aYT6Iuk-2J6EPH6tKHOSySvK4"/>
+</div>
+</div>
+<div class="font-display-lg text-headline-md tracking-widest text-tertiary-fixed dark:text-tertiary">NEBULA</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200 text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<main class="container mx-auto px-container-margin md:px-12 max-w-5xl py-section-gap">
+<!-- Hero: Cosmic Score -->
+<section class="flex flex-col items-center justify-center mb-section-gap text-center">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Soul Connection</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-12">Alex &amp; Taylor</p>
+<div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center rounded-full glow-ring border border-secondary-container/50 bg-surface-container/20 backdrop-blur-md mb-8">
+<!-- Avatar 1 -->
+<div class="absolute -left-4 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full border-2 border-tertiary-fixed shadow-lg overflow-hidden bg-surface">
+<img alt="Partner 1" class="w-full h-full object-cover" data-alt="A circular portrait of a man, subtly illuminated by soft purple and gold ambient light, evoking a mystical, celestial vibe suitable for a modern astrology compatibility interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIwlsP85Ee5UHQz1Uv0v5T7JA2Q3Ug-d5EJ3flMPnW6sSW1whaiTdaRvJmsNTLKj3sKgEInc0bddzO6fxC7pUBH5M-EzQIU0eJ6qmwOi7fVn1W89ftjFyjZeBelWSDcd6GaZbic5PKQljeWT0FQtaVzowgcD77TdTFjxufL95nMd0aIAB215XlXlD55j0KuX3WCiEo7Waeu55Lgqt9BzghsTZTzddG37Vft69UzPY1r5PkJyIL3dK8uqOBwa8YnV9x4RKUUULsyY0"/>
+</div>
+<!-- Center Score -->
+<div class="flex flex-col items-center">
+<span class="font-display-lg text-display-lg text-secondary-fixed">87%</span>
+<span class="font-label-md text-label-md text-tertiary-fixed mt-2 uppercase tracking-widest">Synergy</span>
+</div>
+<!-- Avatar 2 -->
+<div class="absolute -right-4 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full border-2 border-tertiary-fixed shadow-lg overflow-hidden bg-surface">
+<img alt="Partner 2" class="w-full h-full object-cover" data-alt="A circular portrait of a woman, subtly illuminated by soft purple and gold ambient light, matching the mystical, celestial aesthetic of a high-end astrology application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTJzKjKxgs-HImvxinYsCmxqkC2isbkIIRzqr0crGQK0L3nZ8vydn6u0bXzJQGB5x720Z001biagHjtaTItNzwasZ-8mlG4o8hsj7l-O7k_99b4qUHFKgiGS3s5iWUoe0vtUgeSsrnuxAjbEeTvN_bwGrCWGewwDbPwWH9zvNyPP6QDniTcsKV8SP4q7V2Vlz2LorwPWXa3w3bUFalLwWGOB6aR8wmTSdq8Ppvci_rflLsTw4bnp9fbqX8HimcErHjyCOVMijwrqQ"/>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-primary max-w-2xl mx-auto italic opacity-90">
+                "A rare alignment. Your energies interweave with profound depth, promising both transformative growth and comforting stability."
+            </p>
+</section>
+<!-- Bento Grid Insights -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-section-gap">
+<!-- Love -->
+<div class="bg-surface-container-high/40 backdrop-blur-xl border border-white/5 rounded-xl p-6 shadow-sm hover:border-secondary-container/50 transition-colors">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Romance</h3>
+</div>
+<div class="flex items-end gap-2 mb-4">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-secondary-fixed">92%</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Venus trine Mars creates an undeniable magnetic pull. Passion flows effortlessly, grounded by emotional safety.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-variant text-primary font-label-sm text-label-sm border border-outline/20">Trine</span>
+<span class="px-3 py-1 rounded-full bg-surface-variant text-primary font-label-sm text-label-sm border border-outline/20">Water &amp; Earth</span>
+</div>
+</div>
+<!-- Friendship -->
+<div class="bg-surface-container-high/40 backdrop-blur-xl border border-white/5 rounded-xl p-6 shadow-sm hover:border-secondary-container/50 transition-colors">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/40 flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Friendship</h3>
+</div>
+<div class="flex items-end gap-2 mb-4">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-secondary-fixed">85%</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mercury conjunction fosters intuitive communication. You understand each other's unspoken thoughts easily.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-variant text-primary font-label-sm text-label-sm border border-outline/20">Conjunction</span>
+</div>
+</div>
+<!-- Growth/Career -->
+<div class="bg-surface-container-high/40 backdrop-blur-xl border border-white/5 rounded-xl p-6 shadow-sm hover:border-secondary-container/50 transition-colors">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container/40 flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined" data-icon="rocket_launch" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Growth</h3>
+</div>
+<div class="flex items-end gap-2 mb-4">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-secondary-fixed">78%</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Saturn squares suggest areas of friction that require patience, but ultimately lead to profound mutual development.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-variant text-primary font-label-sm text-label-sm border border-outline/20">Square</span>
+<span class="px-3 py-1 rounded-full bg-surface-variant text-primary font-label-sm text-label-sm border border-outline/20">Challenge</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container/40 dark:bg-surface-container/40 backdrop-blur-lg fixed bottom-0 w-full rounded-t-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] z-50 flex justify-around items-center px-4 pb-4 pt-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_graph">auto_graph</span>
+<span class="font-label-sm text-label-sm">Charts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-tertiary-fixed dark:text-tertiary-fixed-dim bg-secondary-container/30 rounded-full px-4 py-1 hover:text-primary-fixed transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-label-sm">Compatibility</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 dark:text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="auto_fix_high">auto_fix_high</span>
+<span class="font-label-sm text-label-sm">Chat</span>
+</a>
+</nav>
+</body></html>

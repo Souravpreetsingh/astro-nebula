@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nebula - Daily Horoscope</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&amp;family=Rubik:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#ffd8ee",
+                      "inverse-surface": "#eddcff",
+                      "secondary-fixed": "#e9ddff",
+                      "inverse-on-surface": "#38294d",
+                      "secondary": "#d1bcff",
+                      "surface-container-highest": "#3d2e52",
+                      "surface-variant": "#3d2e52",
+                      "on-primary-container": "#530044",
+                      "surface-container-low": "#231437",
+                      "surface-bright": "#413257",
+                      "error-container": "#93000a",
+                      "on-surface": "#eddcff",
+                      "primary-container": "#ff2fd6",
+                      "on-primary-fixed-variant": "#86006f",
+                      "on-secondary-fixed-variant": "#5700c9",
+                      "tertiary": "#d7ca00",
+                      "surface-container": "#27183b",
+                      "on-tertiary-fixed-variant": "#4d4800",
+                      "surface-tint": "#ffade2",
+                      "secondary-fixed-dim": "#d1bcff",
+                      "on-tertiary-container": "#464100",
+                      "on-error": "#690005",
+                      "on-tertiary": "#353100",
+                      "tertiary-fixed": "#f6e600",
+                      "inverse-primary": "#af0092",
+                      "secondary-container": "#7000ff",
+                      "outline": "#a68899",
+                      "surface-dim": "#1a0b2e",
+                      "on-secondary-container": "#ddcdff",
+                      "on-primary-fixed": "#3b002f",
+                      "on-background": "#eddcff",
+                      "outline-variant": "#58404f",
+                      "surface-container-high": "#322346",
+                      "primary": "#ffade2",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#debdd0",
+                      "tertiary-container": "#baae00",
+                      "background": "#1a0b2e",
+                      "on-secondary-fixed": "#23005b",
+                      "surface": "#1a0b2e",
+                      "on-secondary": "#3c0090",
+                      "on-primary": "#5f004e",
+                      "surface-container-lowest": "#150629",
+                      "primary-fixed-dim": "#ffade2",
+                      "tertiary-fixed-dim": "#d7ca00",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#1f1c00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "40px",
+                      "margin-mobile": "20px",
+                      "gutter": "20px",
+                      "margin-desktop": "80px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "xl": "64px",
+                      "base": "8px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Rubik"
+                      ],
+                      "headline-lg": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-xl": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-lg-mobile": [
+                              "Bricolage Grotesque"
+                      ],
+                      "label-bold": [
+                              "Rubik"
+                      ],
+                      "body-md": [
+                              "Rubik"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "38px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(26, 11, 46, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(255, 173, 226, 0.3);
+        }
+        .neon-glow-secondary {
+            box-shadow: 0 0 20px rgba(209, 188, 255, 0.3);
+        }
+        .gradient-bg-vibrant {
+            background: linear-gradient(135deg, #ff2fd6 0%, #7000ff 100%);
+        }
+        .gradient-text-vibrant {
+            background: linear-gradient(135deg, #ffade2 0%, #d1bcff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center justify-between px-margin-mobile h-16 bg-surface/70 dark:bg-surface/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(215,202,0,0.1)] md:hidden">
+<div class="flex items-center gap-sm">
+<button aria-label="Menu" class="text-primary hover:scale-110 transition-transform active:scale-95 flex items-center justify-center w-10 h-10 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">flare</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary drop-shadow-[0_0_10px_rgba(255,173,226,0.5)]">Nebula</h1>
+</div>
+<button aria-label="Profile" class="text-primary hover:scale-110 transition-transform active:scale-95 flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Celestial profile avatar" class="w-full h-full object-cover" data-alt="A stylized, high-energy profile portrait of a young person bathed in vibrant neon pink and purple lighting, fitting a joyful pop astrology theme. The background is a dark void, making the colors pop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6iIVXkqxlkIsYjCuokCqNXSqpU8bvVNxqUqLSDSmMWYC0mwPresO3psi75zibkRdx0OG97zsnFD-A-tymyalSyYjYN7fOXxc3iMogmC8ZSkDUvMWOiksXtGJxPY_1i8Sz6Y_SMUpZbku-8I5ZDAQNIxPKKjtfEurn3ty0xu0bOwMOoYZZUYfNtKStJSM7nHqCjtiHKuI00p0NgZM2I1rc1BWOj6lp0eWZM0VDh0c-bFX_sxRSdWD1VALwYk9swI2WgrJ8lGbR3i8"/>
+</button>
+</header>
+<!-- Desktop Nav (Hidden on Mobile) -->
+<header class="hidden md:flex fixed top-0 w-full z-50 items-center justify-between px-margin-desktop h-20 bg-surface/70 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(215,202,0,0.1)]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">flare</span>
+<h1 class="font-headline-lg text-headline-lg text-primary drop-shadow-[0_0_10px_rgba(255,173,226,0.5)] tracking-tight">Nebula</h1>
+</div>
+<nav class="flex items-center gap-md">
+<a class="font-label-bold text-label-bold text-primary hover:scale-110 transition-transform flex items-center gap-2 bg-primary-container text-on-primary-container px-6 py-2 rounded-full shadow-[0_0_15px_rgba(255,47,214,0.4)]" href="#">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span> Stars
+            </a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary-fixed transition-colors flex items-center gap-2 px-4 py-2" href="#">
+<span class="material-symbols-outlined text-[20px]">auto_graph</span> Birth
+            </a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary-fixed transition-colors flex items-center gap-2 px-4 py-2" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span> Circles
+            </a>
+</nav>
+<button aria-label="Profile" class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden hover:scale-110 transition-transform border-2 border-primary">
+<img alt="Celestial profile avatar" class="w-full h-full object-cover" data-alt="A stylized, high-energy profile portrait of a young person bathed in vibrant neon pink and purple lighting, fitting a joyful pop astrology theme. The background is a dark void, making the colors pop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4sW3V8qT12H1DCPDU_0t9pK_BLDOxf8E3tRiHaxswEgnXdY1T-gzjYrQZM0L-aBCaDeCgf7U6-hIZDpCNP2zOtbcbfflsJ0BkfEnbD6hpCUtacnthdpLEfxactfEu0X3V-JgNvGAvwfRdc9a8f_AvmZITNATpncluqSzZ_e67r5Tf9XpYOgKdl9u9xepnRbhXXM4-W_HHAOjEGMnbfYH8CNuw8YtPHnis7Lc6BwGYEKi1BjzFWeE6M6sFO-boEdMywzbHuEWfjjk"/>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto flex flex-col gap-xl overflow-hidden">
+<!-- Hero Section -->
+<section class="flex flex-col gap-sm relative -rotate-1 origin-bottom-left">
+<div class="inline-flex items-center gap-2 bg-tertiary-container text-on-tertiary-container font-label-bold text-label-bold px-4 py-1.5 rounded-full w-max">
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span> High Energy Day
+            </div>
+<h2 class="font-headline-xl text-headline-xl text-primary-fixed drop-shadow-[0_0_15px_rgba(255,216,238,0.3)]">Radiate today,<br/><span class="gradient-text-vibrant">Leo!</span></h2>
+</section>
+<!-- Bento Grid Layout -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-md md:gap-lg auto-rows-min">
+<!-- Daily Insight Card (Large span) -->
+<article class="col-span-1 md:col-span-8 glass-card rounded-xl p-md flex flex-col gap-md relative overflow-hidden neon-glow-primary group hover:border-primary transition-colors">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary-container rounded-full blur-3xl opacity-20"></div>
+<div class="flex items-center justify-between relative z-10">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background">Daily Insight</h3>
+<span class="material-symbols-outlined text-4xl text-tertiary drop-shadow-[0_0_10px_rgba(215,202,0,0.8)] animate-pulse" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant relative z-10">
+                    Your ruling star is beaming pure, unadulterated main-character energy directly into your sector of creativity. Don't dim your light to make others comfortable today. That wild idea you had in the shower? It's not crazy, it's cosmic blueprint material.
+                </p>
+<div class="mt-auto pt-4 relative z-10 flex gap-4">
+<button class="font-label-bold text-label-bold bg-primary text-on-primary px-6 py-3 rounded-full hover:scale-105 active:scale-95 transition-all neon-glow-primary">Harness Energy</button>
+</div>
+</article>
+<!-- Mood & Color Widgets (Stacked on mobile, side-by-side on tablet, stacked on desktop) -->
+<div class="col-span-1 md:col-span-4 flex flex-row md:flex-col gap-md">
+<!-- Mood Widget -->
+<article class="flex-1 gradient-bg-vibrant rounded-full p-6 flex flex-col items-center justify-center gap-2 text-white shadow-[0_0_30px_rgba(112,0,255,0.4)] rotate-1 hover:rotate-0 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-bold text-label-bold uppercase tracking-widest opacity-80">Mood</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile">Electric</span>
+</article>
+<!-- Color Widget -->
+<article class="flex-1 glass-card rounded-full p-6 flex flex-col items-center justify-center gap-2 border-2 border-tertiary neon-glow-secondary -rotate-2 hover:rotate-0 transition-transform">
+<div class="w-8 h-8 rounded-full bg-[#ffea00] shadow-[0_0_15px_rgba(255,234,0,0.8)] mb-1"></div>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Power Color</span>
+<span class="font-body-lg text-body-lg text-tertiary">Neon Gold</span>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface-container-low/80 dark:bg-surface-container-low/80 backdrop-blur-2xl rounded-t-xl border-t border-white/5 shadow-[0_-4px_20px_rgba(112,0,255,0.2)] md:hidden">
+<a aria-label="Stars (Active)" class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-1 shadow-[0_0_15px_rgba(255,47,214,0.4)] active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-bold text-label-bold text-[10px]">Stars</span>
+</a>
+<a aria-label="Birth" class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-secondary-fixed transition-colors active:scale-90 duration-200 px-3 py-1" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">auto_graph</span>
+<span class="font-label-bold text-label-bold text-[10px]">Birth</span>
+</a>
+<a aria-label="Circles" class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-secondary-fixed transition-colors active:scale-90 duration-200 px-3 py-1" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">group</span>
+<span class="font-label-bold text-label-bold text-[10px]">Circles</span>
+</a>
+<a aria-label="More" class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-secondary-fixed transition-colors active:scale-90 duration-200 px-3 py-1" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1">settings_heart</span>
+<span class="font-label-bold text-label-bold text-[10px]">More</span>
+</a>
+</nav>
+</body></html>

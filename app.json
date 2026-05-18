@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Nebula Clone",
+    "slug": "nebula-clone",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0a0a1a"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nebulaclone.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0a0a1a"
+      },
+      "package": "com.nebulaclone.app"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
